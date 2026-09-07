@@ -3,60 +3,133 @@
 A human-led, evidence-driven approach to designing, delegating, verifying,
 reviewing, and learning from software engineering with coding agents.
 
-## Purpose
+## Why this exists
 
-This repository is an operational playbook for engineers who want useful agent
-autonomy without giving up human understanding, judgment, or accountability.
-It provides reusable guidance for turning intended outcomes into bounded work,
-delegating appropriate parts of that work, evaluating the resulting evidence,
-and preserving enough durable context to continue safely.
+Coding agents make **implementation fast**. They do not automatically make the
+**intended outcome clear**, preserve decisions outside a conversation, know
+which choices belong to a human, or prove that their work is correct.
 
-The guidance is vendor-neutral. It does not depend on a particular agent,
-model, editor, hosting platform, company, or project.
+This playbook addresses the engineering work between an initial request and an
+accepted change:
 
-## Audience
+- making the intended outcome and constraints explicit;
+- deciding what an agent may do and when it must stop;
+- selecting only the planning, implementation, review, or learning activities
+  that add value for this task;
+- checking the result against current evidence; and
+- preserving enough durable context for someone else to continue safely.
 
-The playbook is for engineers and teams incorporating coding agents into real
-delivery work. It is especially concerned with the practical questions that
-appear between a prompt and a merge:
+The objective is **useful agent autonomy** without giving up **human
+understanding, judgment, or accountability**. The guidance is vendor-neutral
+and does not depend on a particular agent, model, editor, hosting platform,
+company, or project.
+It is intended for engineers and teams incorporating coding agents into real
+delivery work.
 
-- Which decisions should remain human decisions?
-- When is work ready to delegate?
-- How far should an agent proceed without interruption?
-- When should it stop and escalate?
-- What evidence supports review and acceptance?
-- How can another session resume without relying on a hidden transcript?
+## The 60-second model
 
-## Terminology
+1. **Make the work understandable.** Record the outcome, relevant context,
+   constraints, acceptance criteria, and unresolved consequential decisions.
+2. **Choose the appropriate plays.** Use only the refinement, planning,
+   implementation, verification, review, acceptance, or handoff activities that
+   fit the work.
+3. **Delegate with boundaries.** Let the agent continue through clear, routine,
+   reversible work. It stops when material uncertainty, risk, or missing
+   authority appears.
+4. **Verify the exact proposal.** Tests, builds, CI, and targeted manual checks
+   provide evidence. An agent's confidence or another agent's approval is not
+   proof.
+5. **Keep acceptance human.** A human resolves material findings and decides
+   whether to accept, revise, reject, or defer the proposal.
+6. **Leave durable state.** Important decisions, evidence, limitations, and next
+   actions must not depend on recovering the original chat.
 
-- The **playbook** is this overall collection of reusable guidance.
-- A **play** is a bounded way of performing a phase of work, such as refinement,
-  planning, implementation, verification, or review.
-- A **workflow** is a situational composition of plays chosen for a particular
-  task.
+The playbook is deliberately **firm about authority, evidence, escalation, and
+acceptance**. It is deliberately **flexible about how much process** a task
+needs.
 
-There is no single required workflow. A familiar, reversible fix and an
-uncertain architectural change should not receive identical ceremony. The
-appropriate workflow depends on consequence, uncertainty, reversibility,
-authority, available verification, and where agent help adds value.
+## How the pieces fit together
 
-## Start here
+```text
+central principles + reusable plays
+                  |
+                  | adapted by
+                  v
+       project-local profile
+                  |
+                  | applied to
+                  v
+ task-specific workflow -> evidence -> human acceptance
+```
 
-1. Read the [principles](docs/principles.md) for the human and agent operating
-   model.
-2. Use the [bounded task lifecycle](docs/task-lifecycle.md) to understand how a
-   candidate task moves through refinement, implementation, evidence, review,
-   acceptance, and handoff.
-3. Read [project-local profiles](docs/project-profiles.md) when applying the
-   playbook to a specific repository.
+| Term | Plain-language meaning |
+| --- | --- |
+| **Playbook** | This overall collection of reusable guidance. |
+| **Play** | One bounded kind of work, such as refinement, planning, implementation, verification, or review. |
+| **Workflow** | The plays selected and combined for a particular task. There is no required universal sequence. |
+| **Project-local profile** | A repository's own explanation of its authorities, risks, commands, checks, and adaptations. |
 
-The central playbook supplies reusable rationale and plays. Each consuming
-repository remains independently operable through a concise local profile that
-defines its own authorities, risks, commands, checks, and adaptations.
+The central playbook explains reusable reasoning. A consuming repository keeps
+its operational rules close to the work so that a human or agent can operate
+safely without access to a private conversation or this repository.
+
+## Choose a workflow that fits the task
+
+Two tasks in the same project may need different treatment.
+
+| Familiar, reversible fix | Uncertain or consequential change |
+| --- | --- |
+| The human may already know the appropriate change and implement it directly. | Begin by resolving product, architecture, security, or other consequential decisions. |
+| An agent may join only for targeted testing or review. | Make the contract and approach reviewable before substantial delegation. |
+| A concise issue and focused verification may be sufficient. | Use stronger planning, broader verification, and possibly independent review when those reduce a named risk. |
+| Extra artifacts are unnecessary when they add no control, evidence, or understanding. | Stop and return to discovery or planning when implementation exposes a material gap. |
+
+The point is **not to maximize** the number of agents, prompts, documents, or
+checkpoints. The point is to apply **enough structure** to make the work safe,
+understandable, and reviewable.
+
+## Human and agent responsibilities
+
+The **human engineer owns the outcome**. That does **not require typing every
+line**. Ownership comes from controlling the objective, consequential decisions,
+constraints, delegated authority, verification standard, review disposition,
+and final acceptance.
+
+Within an accepted boundary, an agent may investigate, propose, implement,
+verify, or review. **Permission for one phase does not automatically grant
+another**: permission to plan is not permission to implement, and permission to
+implement is not permission to merge, publish, change accepted requirements, or
+perform otherwise restricted actions.
+
+## Start using the playbook
+
+1. Read the [principles](docs/principles.md) for the accepted human and agent
+   operating model.
+2. Use the [bounded task lifecycle](docs/task-lifecycle.md) to select the plays
+   that add value for the current task.
+3. Define a concise [project-local profile](docs/project-profiles.md) in the
+   consuming repository.
+4. Use the profile during real work. When experience exposes a useful pattern,
+   missing rule, or unnecessary process, preserve the conclusion and decide
+   whether the profile or central guidance should change.
+
+The project-local profile is the **operational authority** for its repository.
+Central guidance does not silently override local rules, and conflicts must be
+surfaced rather than guessed away.
+
+## What this is not
+
+This is not:
+
+- one mandatory workflow for every change;
+- an agent framework or orchestration product;
+- a replacement for product judgment, engineering expertise, or verification;
+- a requirement to involve an agent in every phase; or
+- a claim that more process automatically produces a better result.
 
 ## Maturity and change
 
-This repository is early and evolving. Its guidance is intended for real use
+This repository is **early and evolving**. Its guidance is intended for real use
 and revision based on delivery evidence; it is not presented as a finished or
 universally proven methodology.
 
