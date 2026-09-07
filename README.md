@@ -117,6 +117,12 @@ The project-local profile is the **operational authority** for its repository.
 Central guidance does not silently override local rules, and conflicts must be
 surfaced rather than guessed away.
 
+## Case studies
+
+- [Engineering Reference adoption](case-studies/engineering-reference.md) — a
+  short retrospective and lessons catalogue from the playbook's first
+  consuming repository. It is a case study, not normative guidance.
+
 ## What this is not
 
 This is not:
