@@ -113,6 +113,11 @@ perform otherwise restricted actions.
    missing rule, or unnecessary process, preserve the conclusion and decide
    whether the profile or central guidance should change.
 
+For the practical sequence from repository entry point to task delegation, see
+[Starting work with an agent](docs/project-profiles.md#starting-work-with-an-agent),
+including examples for proposing a workflow and proceeding after one has been
+accepted.
+
 The project-local profile is the **operational authority** for its repository.
 Central guidance does not silently override local rules, and conflicts must be
 surfaced rather than guessed away.

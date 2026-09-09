@@ -101,6 +101,51 @@ the profile after real usage demonstrates which fields and checks are useful.
 They are supporting mechanisms, not substitutes for clear authority or human
 judgment.
 
+## Starting work with an agent
+
+After a repository has adopted the playbook, starting a task should not require
+re-explaining the complete operating model in every conversation. The normal
+sequence is:
+
+1. Enter through the repository's canonical agent instructions, such as
+   `AGENTS.md`, which route the agent to the project-local profile.
+2. Read the profile and the governing documents it identifies for the area of
+   work.
+3. Read the task contract and its accepted amendments.
+4. Select or confirm a proportionate workflow for that task, including
+   responsibilities, meaningful checkpoints, verification, and any independent
+   review.
+5. Delegate the current responsibility with explicit authority and a clear
+   stopping point.
+
+The first two steps orient the agent to the repository. They do not by
+themselves make a particular task ready. Readiness still depends on whether the
+task contract and selected workflow are sufficiently clear for the next actor
+and play without requiring an implicit consequential decision.
+
+Some tools discover canonical repository instructions automatically; others do
+not. When discovery is unavailable or uncertain, identify the canonical entry
+point explicitly rather than asking the agent to search broadly for relevant
+Markdown files. For example, before a workflow has been accepted:
+
+> Before task work, read `AGENTS.md` and follow the project-local profile it
+> identifies. Treat issue #123 and its accepted amendments as the task
+> contract. Propose a proportionate workflow, including responsibilities,
+> checkpoints, stop conditions, and verification. Surface conflicts or missing
+> consequential decisions, and do not implement until the approach is
+> accepted.
+
+After the workflow has been accepted, a shorter instruction may be sufficient:
+
+> The workflow recorded on issue #123 is accepted. Proceed through the
+> delegated plays within its stated boundaries. Stop if the work requires a
+> consequential decision or authority beyond the accepted contract.
+
+These examples activate durable project and task guidance; they do not replace
+it. A consuming repository's profile should remain self-contained enough for
+safe operation, so an agent does not need access to the central playbook or a
+private conversation for every task.
+
 ## Keeping profiles independent and current
 
 Do not copy this entire playbook into a consuming repository. Copying creates
