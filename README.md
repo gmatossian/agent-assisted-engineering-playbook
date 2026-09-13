@@ -22,9 +22,8 @@ accepted change:
 The objective is **useful agent autonomy** without giving up **human
 understanding, judgment, or accountability**. The guidance is vendor-neutral
 and does not depend on a particular agent, model, editor, hosting platform,
-company, or project.
-It is intended for engineers and teams incorporating coding agents into real
-delivery work.
+company, or project. It documents an approach developed through real delivery
+work with coding agents.
 
 ## The 60-second model
 
@@ -101,17 +100,19 @@ another**: permission to plan is not permission to implement, and permission to
 implement is not permission to merge, publish, change accepted requirements, or
 perform otherwise restricted actions.
 
-## Start using the playbook
+## How the playbook is applied
 
-1. Read the [principles](docs/principles.md) for the accepted human and agent
-   operating model.
-2. Use the [bounded task lifecycle](docs/task-lifecycle.md) to select the plays
-   that add value for the current task.
-3. Define a concise [project-local profile](docs/project-profiles.md) in the
-   consuming repository.
-4. Use the profile during real work. When experience exposes a useful pattern,
-   missing rule, or unnecessary process, preserve the conclusion and decide
-   whether the profile or central guidance should change.
+The playbook is applied in this sequence:
+
+1. Engineers read the [principles](docs/principles.md) for the accepted human
+   and agent operating model.
+2. They use the [bounded task lifecycle](docs/task-lifecycle.md) to select the
+   plays that add value for the current task.
+3. Each consuming repository defines a concise
+   [project-local profile](docs/project-profiles.md).
+4. Teams use the profile during real work. When experience exposes a useful
+   pattern, missing rule, or unnecessary process, they preserve the conclusion
+   and decide whether the profile or central guidance should change.
 
 For the practical sequence from repository entry point to task delegation, see
 [Starting work with an agent](docs/project-profiles.md#starting-work-with-an-agent),
@@ -140,9 +141,9 @@ This is not:
 
 ## Maturity and change
 
-This repository is **early and evolving**. Its guidance is intended for real use
-and revision based on delivery evidence; it is not presented as a finished or
-universally proven methodology.
+This repository is an **early and evolving public work in progress**, developed
+through use in real delivery work. Its guidance is revised based on delivery
+evidence; it is not presented as complete or universally proven.
 
 Canonical documents contain the currently **accepted** guidance. Accepted
 means adopted for current use, not permanently settled. Proposed or
@@ -151,5 +152,11 @@ experimental rule is temporarily included in canonical guidance, it must be
 marked as experimental and linked to its tracking issue.
 
 Durable conclusions and rationale belong in repository files. Raw transcripts
-may help private recovery, but readers and contributors should not need them to
+may help private recovery, but readers and maintainers should not need them to
 understand the playbook or continue its work.
+
+## License
+
+This repository is proprietary and published publicly for visibility and
+feedback only. No open-source or other license is granted, and all rights are
+reserved. External contributions are not accepted. See [LICENSE](LICENSE).
