@@ -157,6 +157,8 @@ understand the playbook or continue its work.
 
 ## License
 
-This repository is proprietary and published publicly for visibility and
-feedback only. No open-source or other license is granted, and all rights are
-reserved. External contributions are not accepted. See [LICENSE](LICENSE).
+This repository is a proprietary portfolio artifact published for visibility,
+evaluation, and feedback. The license permits cloning, reading, testing, and
+making evaluation-only local adaptations. Ongoing operational adoption,
+commercial exploitation, and redistribution are not permitted. External
+contributions are not accepted. See [LICENSE](LICENSE).
